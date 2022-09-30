@@ -15,3 +15,4 @@ RUN apt-get update && apt-get install -y --no-install-recommends  \
   && rm -rf /var/lib/apt/lists/*
 # Avoid that unison runs into "Argument list too long" error by increasing limit
 RUN ulimit -s 65536
+USER notroot
