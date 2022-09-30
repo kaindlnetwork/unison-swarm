@@ -12,6 +12,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends  \
 RUN ulimit -s 65536
 
 # Run your program under Tini
-CMD ["unison -auto -perms 0 -dontchmod -batch -force newer ", "$PATH1 ", "$PATH2"]
+CMD ["unison -auto -perms 0 -dontchmod -batch -force newer $PATH1 $PATH2"]
 #RUN useradd notroot
 #USER notroot
