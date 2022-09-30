@@ -12,7 +12,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends  \
   apt-transport-https \
   && rm -rf /var/lib/apt/lists/*
 RUN apt-get update && apt-get install -y --no-install-recommends  \
-  unison-2.51+4.13.1 \
   unison \
   && rm -rf /var/lib/apt/lists/*
 # Avoid that unison runs into "Argument list too long" error by increasing limit
