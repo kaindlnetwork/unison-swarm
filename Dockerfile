@@ -9,5 +9,6 @@ ENTRYPOINT ["/tini", "--"]
 #CMD ["unison -auto -perms 0 -dontchmod -batch -force newer", "$PATH1", "$PATH2"]
 # or docker run your-image /your/program ...
 RUN apt-get update && apt-get install -y --no-install-recommends  \
-  unison:2.51.5+1 \
+  unison-2.51+4.13.1 \
+  unison \
   && rm -rf /var/lib/apt/lists/*
