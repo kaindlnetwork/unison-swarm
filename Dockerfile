@@ -3,7 +3,7 @@ FROM ubuntu:18.04
 ENV TINI_VERSION v0.19.0
 ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
 RUN chmod +x /tini
-ENTRYPOINT ["/tini", "--"]
+ENTRYPOINT ["/tini -vvv", "--"]
 
 # Run your program under Tini
 CMD ["unison -auto -perms 0 -dontchmod -batch -force newer ", "$PATH1 ", "$PATH2"]
