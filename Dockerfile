@@ -10,8 +10,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends  \
   && rm -rf /var/lib/apt/lists/*
 # Avoid that unison runs into "Argument list too long" error by increasing limit
 RUN ulimit -s 65536
-
+ADD run.sh /start.sh
+RUN chmod +x /start.sh
 # Run your program under Tini
-# CMD ["unison -auto -perms 0 -dontchmod -batch -force newer $PATH1 $PATH2"]
+CMD ["/start.sh"]
 #RUN useradd notroot
 #USER notroot
